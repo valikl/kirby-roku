@@ -1,0 +1,13 @@
+title: Playlist
+pages: true
+files: false
+fields:
+  title:
+    label: Title
+    type:  text
+  image_url:
+    label: Image Url
+    type: text    
+  description:
+    label: Description
+    type:  textarea   

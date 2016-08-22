@@ -1,0 +1,19 @@
+title: Video
+pages: true
+files: false
+fields:
+  title:
+    label: Title
+    type:  text
+  background_image_url:
+    label: Background Image Url
+    type: text
+  side_image_url:
+    label: Side Image Url
+    type: text
+  video_url:
+    label: Video Url
+    type: text    
+  description:
+    label: Description
+    type:  textarea  

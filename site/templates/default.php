@@ -6,7 +6,7 @@ function  create_playlist_children_list($item)
 {
     $json = array();
     
-    $videos = $item->children()->visible()->flip()->paginate(10);
+    $videos = $item->children()->visible();
             
     foreach($videos as $video) {
 
@@ -40,7 +40,7 @@ function  create_category_children_list($category)
         // ERROR ERROR
     }
     
-    $items = $category->children()->visible()->flip()->paginate(10);
+    $items = $category->children()->visible();
     
     foreach($items as $item) {
         
@@ -66,7 +66,7 @@ function  create_category_children_list($category)
                 'title' => (string)$item->title(),
                 'image_url'  => (string)$item->image_url(),
                 'description'  => (string)$item->description(),
-                'children' => create_playlist_children_list($category)
+                'children' => create_playlist_children_list($item)
             );
         }
     }
@@ -74,8 +74,7 @@ function  create_category_children_list($category)
     return $json;
 }
 
-//$data = $pages->find('kabbalah-for-beginners')->children()->visible()->flip()->paginate(10);
-$data = $pages->first()->children()->visible()->flip()->paginate(10);
+$data = $pages->first()->children()->visible();
 
 $json = array();
 

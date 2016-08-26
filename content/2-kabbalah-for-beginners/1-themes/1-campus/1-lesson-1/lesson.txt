@@ -1,0 +1,17 @@
+Title: Lesson 1
+
+----
+
+Background-image-url: dd
+
+----
+
+Side-image-url: dd
+
+----
+
+Video-url: dd
+
+----
+
+Description: Campus Lesson 1

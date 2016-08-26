@@ -1,0 +1,17 @@
+Title: Congress Lesson #1
+
+----
+
+Background-image-url: aaa.com
+
+----
+
+Side-image-url: bbb.com
+
+----
+
+Video-url: ccc.com
+
+----
+
+Description: This is Congress Lesson #1

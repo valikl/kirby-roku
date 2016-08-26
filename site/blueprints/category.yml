@@ -4,7 +4,4 @@ files: false
 fields:
   title:
     label: Title
-    type:  text
-  counter:
-    label: Counter
-    type:  number  
+    type:  text 

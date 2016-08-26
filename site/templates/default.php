@@ -6,22 +6,22 @@ function  create_playlist_children_list($item)
 {
     $json = array();
     
-    $lessons = $item->children()->visible()->flip()->paginate(10);
+    $videos = $item->children()->visible()->flip()->paginate(10);
             
-    foreach($lessons as $lesson) {
+    foreach($videos as $video) {
 
-        if ((string)$lesson->intendedTemplate() != "lesson")
+        if ((string)$video->intendedTemplate() != "video")
         {
             // ERROR ERROR
         }
 
         $json[] = array(
-            'TYPE' => "LESSON IN PLAYLIST",
-            'title' => (string)$lesson->title(),
-            'background_image_url'  => (string)$lesson->background_image_url(),
-            'side_image_url'  => (string)$lesson->side_image_url(),
-            'video_url'  => (string)$lesson->video_url(),
-            'description'  => (string)$lesson->description()
+            'TYPE' => "video IN PLAYLIST",
+            'title' => (string)$video->title(),
+            'background_image_url'  => (string)$video->background_image_url(),
+            'side_image_url'  => (string)$video->side_image_url(),
+            'video_url'  => (string)$video->video_url(),
+            'description'  => (string)$video->description()
         ); 
     }
     
@@ -46,10 +46,10 @@ function  create_category_children_list($category)
         
         //echo (string)$item->intendedTemplate();
         
-        if ((string)$item->intendedTemplate() == "lesson")
+        if ((string)$item->intendedTemplate() == "video")
         {
             $json[] = array(
-                'TYPE' => "LESSON",
+                'TYPE' => "video",
                 'title' => (string)$item->title(),
                 'background_image_url'  => (string)$item->background_image_url(),
                 'side_image_url'  => (string)$item->side_image_url(),

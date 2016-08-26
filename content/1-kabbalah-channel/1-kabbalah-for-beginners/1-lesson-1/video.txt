@@ -1,0 +1,17 @@
+Title: Lesson 1
+
+----
+
+Background-image-url: ssd.com
+
+----
+
+Side-image-url: ssds.com
+
+----
+
+Video-url: dcc.com
+
+----
+
+Description: This is a Lesson 1

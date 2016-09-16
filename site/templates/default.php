@@ -2,6 +2,12 @@
 
 header('Content-type: application/json; charset=utf-8');
 
+define("TYPE_CATEGORY", "category");
+define("TYPE_PLAYLIST", "playlist");
+define("TYPE_VIDEO", "video");
+
+define("ROOT_NAME", "kabbalah-channel");
+
 function  create_playlist_children_list($item)
 {
     $json = array();
@@ -10,13 +16,13 @@ function  create_playlist_children_list($item)
             
     foreach($videos as $video) {
 
-        if ((string)$video->intendedTemplate() != "video")
+        if ((string)$video->intendedTemplate() != TYPE_VIDEO)
         {
             // ERROR ERROR
         }
 
         $json[] = array(
-            'TYPE' => "video IN PLAYLIST",
+            'type' => TYPE_VIDEO,
             'title' => (string)$video->title(),
             'background_image_url'  => (string)$video->background_image_url(),
             'side_image_url'  => (string)$video->side_image_url(),
@@ -35,7 +41,7 @@ function  create_category_children_list($category)
     //echo (string)$category->title();
     //var_dump($category->toArray());
   
-    if ((string)$category->intendedTemplate() != "category")
+    if ((string)$category->intendedTemplate() != TYPE_CATEGORY)
     {
         // ERROR ERROR
     }
@@ -46,10 +52,10 @@ function  create_category_children_list($category)
         
         //echo (string)$item->intendedTemplate();
         
-        if ((string)$item->intendedTemplate() == "video")
+        if ((string)$item->intendedTemplate() == TYPE_VIDEO)
         {
             $json[] = array(
-                'TYPE' => "video",
+                'type' => TYPE_VIDEO,
                 'title' => (string)$item->title(),
                 'background_image_url'  => (string)$item->background_image_url(),
                 'side_image_url'  => (string)$item->side_image_url(),
@@ -59,10 +65,10 @@ function  create_category_children_list($category)
             continue;
         }
         
-        if ((string)$item->intendedTemplate() == "playlist")
+        if ((string)$item->intendedTemplate() == TYPE_PLAYLIST)
         {
             $json[] = array(
-                'TYPE' => "PLAYLIST",
+                'type' => TYPE_PLAYLIST,
                 'title' => (string)$item->title(),
                 'image_url'  => (string)$item->image_url(),
                 'description'  => (string)$item->description(),
@@ -74,14 +80,15 @@ function  create_category_children_list($category)
     return $json;
 }
 
-$data = $pages->first()->children()->visible();
+
+$data = $pages->find(ROOT_NAME)->children()->visible();
 
 $json = array();
 
 foreach($data as $category) {
    
     $json[] = array(
-    'TYPE' => "CATEGORY",
+    'type' => TYPE_CATEGORY,
     'title' => (string)$category->title(),
     'children' => create_category_children_list($category)
     );

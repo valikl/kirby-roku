@@ -1,0 +1,22 @@
+title: Homepage
+pages: true
+files: false
+fields:
+  live_stream_url:
+    label: Live Stream Url
+    type: text
+  small_image_selected_url:
+    label: Small Image Selected Url
+    type: text
+  small_image_unselected_url:
+    label: Small Image Unselected Url
+    type: text    
+  background_image_selected_url:
+    label: Background Image Selected Url
+    type: text 
+  background_image_unselected_url:
+    label: Background Image Selected Url
+    type: text     
+  about_description:
+    label: About Description
+    type:  textarea  

@@ -83,6 +83,28 @@ function  create_category_children_list($category)
     return $json;
 }
 
+function  create_options_list($category)
+{
+    $json = array();
+    
+    // Homepage has only one child - Options category
+    $items = $category->children()->visible(); 
+    
+    foreach($items as $item) 
+    {
+        $options = $item->children()->visible();
+        
+        foreach($options as $option) 
+        {
+            $json[] = (string)$option->title();
+        }
+        
+        //Should be only one child - option
+        break;
+    }
+    
+    return $json;    
+}
 
 $data = $pages->find(ROOT_NAME)->children()->visible();
 
@@ -110,7 +132,8 @@ foreach($data as $node) {
                 'small_image_unselected_url' => (string)$node->live_stream_url(),
                 'background_image_selected_url' => (string)$node->live_stream_url(),
                 'background_image_unselected_url' => (string)$node->live_stream_url(),
-                'about_description' => (string)$node->live_stream_url()
+                'about_description' => (string)$node->live_stream_url(),
+                'options' => create_options_list($node)
             );
             break;
         }

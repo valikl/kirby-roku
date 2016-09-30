@@ -1,0 +1,16 @@
+title: Text Node
+pages: true
+files: false
+fields:
+  title:
+    label: Title
+    type:  text
+  small_image_url:
+    label: Small Image Url
+    type: text   
+  background_image_url:
+    label: Background Image Url
+    type: text      
+  text:
+    label: text
+    type:  textarea  

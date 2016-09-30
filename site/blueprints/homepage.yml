@@ -15,7 +15,7 @@ fields:
     label: Background Image Selected Url
     type: text 
   background_image_unselected_url:
-    label: Background Image Selected Url
+    label: Background Image Unselected Url
     type: text     
   about_description:
     label: About Description

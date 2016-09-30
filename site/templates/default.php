@@ -128,11 +128,11 @@ foreach($data as $node) {
             $json[] = array(
                 'type' => TYPE_HOMEPAGE,
                 'live_stream_url' => (string)$node->live_stream_url(),
-                'small_image_selected_url' => (string)$node->live_stream_url(),
-                'small_image_unselected_url' => (string)$node->live_stream_url(),
-                'background_image_selected_url' => (string)$node->live_stream_url(),
-                'background_image_unselected_url' => (string)$node->live_stream_url(),
-                'about_description' => (string)$node->live_stream_url(),
+                'small_image_selected_url' => (string)$node->small_image_selected_url(),
+                'small_image_unselected_url' => (string)$node->small_image_unselected_url(),
+                'background_image_selected_url' => (string)$node->background_image_selected_url(),
+                'background_image_unselected_url' => (string)$node->background_image_unselected_url(),
+                'about_description' => (string)$node->about_description(),
                 'options' => create_options_list($node)
             );
             break;

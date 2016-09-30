@@ -68,6 +68,7 @@ function  create_category_children_list($category)
                     'type' => TYPE_PLAYLIST,
                     'title' => (string)$item->title(),
                     'image_url'  => (string)$item->image_url(),
+                    'background_image_url'  => (string)$item->background_image_url(),
                     'description'  => (string)$item->description()
                     //'children' => create_playlist_children_list($item)
                 );

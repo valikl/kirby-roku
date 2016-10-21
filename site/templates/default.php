@@ -5,6 +5,7 @@ header('Content-type: application/json; charset=utf-8');
 define("TYPE_HOMEPAGE", "homepage");
 define("TYPE_CATEGORY", "category");
 define("TYPE_PLAYLIST", "playlist");
+define("TYPE_OPTION", "option");
 define("TYPE_VIDEO", "video");
 
 define("ROOT_NAME", "kabbalah-channel");
@@ -100,7 +101,11 @@ function  create_options_list($category)
         
         foreach($options as $option) 
         {
-            $json[] = (string)$option->title();
+            //$json[] = (string)$option->title();
+            $json[] = array(
+                'title' => (string)$option->title(),
+                'uri' => (string)$option->uri()
+            );
         }
         
         //Should be only one child - option

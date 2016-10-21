@@ -19,6 +19,7 @@ function  create_playlist_children_list($item)
 
         $json[] = array(
             'type' => TYPE_VIDEO,
+            'uri' => (string)$video->uri(),
             'title' => (string)$video->title(),
             'background_image_url'  => (string)$video->background_image_url(),
             'side_image_url'  => (string)$video->side_image_url(),

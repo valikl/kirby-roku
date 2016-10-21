@@ -24,6 +24,7 @@ function  create_playlist_children_list($item)
 
         $json[] = array(
             'type' => TYPE_VIDEO,
+            'uri' => (string)$video->uri(),
             'title' => (string)$video->title(),
             'background_image_url'  => (string)$video->background_image_url(),
             'side_image_url'  => (string)$video->side_image_url(),
@@ -54,6 +55,7 @@ function  create_category_children_list($category)
             {
                 $json[] = array(
                     'type' => TYPE_VIDEO,
+                    'uri' => (string)$item->uri(),
                     'title' => (string)$item->title(),
                     'background_image_url'  => (string)$item->background_image_url(),
                     'side_image_url'  => (string)$item->side_image_url(),
@@ -66,6 +68,7 @@ function  create_category_children_list($category)
             { 
                 $json[] = array(
                     'type' => TYPE_PLAYLIST,
+                    'uri' => (string)$item->uri(),
                     'title' => (string)$item->title(),
                     'image_url'  => (string)$item->image_url(),
                     'background_image_url'  => (string)$item->background_image_url(),
@@ -119,6 +122,7 @@ foreach($data as $node) {
         {
             $json[] = array(
                 'type' => TYPE_CATEGORY,
+                'uri' => (string)$node->uri(),
                 'title' => (string)$node->title(),
                 'children' => create_category_children_list($node)
             );
@@ -128,6 +132,7 @@ foreach($data as $node) {
         { 
             $json[] = array(
                 'type' => TYPE_HOMEPAGE,
+                'uri' => (string)$node->uri(),
                 'live_stream_url' => (string)$node->live_stream_url(),
                 'small_image_selected_url' => (string)$node->small_image_selected_url(),
                 'small_image_unselected_url' => (string)$node->small_image_unselected_url(),

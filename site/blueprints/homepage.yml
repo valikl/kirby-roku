@@ -5,6 +5,9 @@ fields:
   live_stream_url:
     label: Live Stream Url
     type: text
+  live_stream_enabled:
+    label: Live Stream Enabled
+    type: checkbox
   small_image_selected_url:
     label: Small Image Selected Url
     type: text

@@ -101,7 +101,6 @@ function  create_options_list($category)
         
         foreach($options as $option) 
         {
-            //$json[] = (string)$option->title();
             $json[] = array(
                 'title' => (string)$option->title(),
                 'uri' => (string)$option->uri()
@@ -139,6 +138,7 @@ foreach($data as $node) {
                 'type' => TYPE_HOMEPAGE,
                 'uri' => (string)$node->uri(),
                 'live_stream_url' => (string)$node->live_stream_url(),
+                'live_stream_enabled' => (string)$node->live_stream_enabled(),
                 'small_image_selected_url' => (string)$node->small_image_selected_url(),
                 'small_image_unselected_url' => (string)$node->small_image_unselected_url(),
                 'background_image_selected_url' => (string)$node->background_image_selected_url(),

@@ -114,6 +114,17 @@ function  create_options_list($category)
     return $json;    
 }
 
+function  options_uri($category)
+{
+    // Homepage has only one child - Options category
+    $items = $category->children()->visible(); 
+    
+    foreach($items as $item) 
+    {
+        return $item->uri();
+    }
+}
+
 $data = $pages->find(ROOT_NAME)->children()->visible();
 
 $json = array();
@@ -144,7 +155,7 @@ foreach($data as $node) {
                 'background_image_selected_url' => (string)$node->background_image_selected_url(),
                 'background_image_unselected_url' => (string)$node->background_image_unselected_url(),
                 'about_description' => (string)$node->about_description(),
-                'options' => create_options_list($node)
+                'options_uri' => (string)options_uri($node) 
             );
             break;
         }
